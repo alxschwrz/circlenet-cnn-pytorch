@@ -13,13 +13,13 @@ The project is organized into the following key components:
 ***Prediction & Visualization:*** The prediction script loads a trained CircleNet model and performs predictions on a new set of images. Predicted circle centers and true circle centers are visualized for comparison.
 ## Installation
 ```bash
-git clone XXX
+git clone circlenet-cnn-pytorch
 cd circlenet
 pip3 install -r requirements.txt
 ```
 
 ## Image Generation
-The script "generate_synthetic_data.py" can be used to generate a synthetic dataset of black and white images, each containing a circle of random size and position. Along with each generated image, the true coordinates of the circle's center are stored as a label. 
+The script "generate_synthetic_spheres.py" can be used to generate a synthetic dataset of black and white images, each containing a circle of random size and position. Along with each generated image, the true coordinates of the circle's center are stored as a label. 
 ```
 python3 generate_synthetic_spheres.py
 ```
