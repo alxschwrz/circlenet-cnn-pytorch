@@ -13,7 +13,7 @@ The project is organized into the following key components:
 ***Prediction & Visualization:*** The prediction script loads a trained CircleNet model and performs predictions on a new set of images. Predicted circle centers and true circle centers are visualized for comparison.
 ## Installation
 ```bash
-git clone circlenet-cnn-pytorch
+git clone https://github.com/alxschwrz/circlenet-cnn-pytorch.git
 cd circlenet
 pip3 install -r requirements.txt
 ```
