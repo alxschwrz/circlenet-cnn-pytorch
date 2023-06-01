@@ -14,7 +14,7 @@ The project is organized into the following key components:
 ## Installation
 ```bash
 git clone https://github.com/alxschwrz/circlenet-cnn-pytorch.git
-cd circlenet
+cd circlenet-cnn-pytorch
 pip3 install -r requirements.txt
 ```
 
