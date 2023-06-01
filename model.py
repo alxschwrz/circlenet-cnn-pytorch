@@ -9,8 +9,8 @@ class CircleNet(nn.Module):
         self.L3_conv = nn.Sequential(nn.Conv2d(64, 128, 3),  nn.BatchNorm2d(128), nn.ReLU(), nn.MaxPool2d(2, 2)) # 128 * 10 * 10
         self.L4_conv = nn.Sequential(nn.Conv2d(128, 256, 3), nn.BatchNorm2d(256), nn.ReLU(), nn.MaxPool2d(2, 2)) # 256 * 4 * 4
         self.L5_conv = nn.Sequential(nn.Conv2d(256, 512, 3), nn.BatchNorm2d(512), nn.ReLU(), nn.MaxPool2d(2, 2)) # 512 * 1 * 1
-        self.L6_fc = nn.Sequential(nn.Linear(512, 256), nn.ReLU()) # 256
-        self.L7_fc = nn.Sequential(nn.Linear(256, 2)) # 2
+        self.L6_fc   = nn.Sequential(nn.Linear(512, 256), nn.ReLU()) # 256
+        self.L7_fc   = nn.Sequential(nn.Linear(256, 2)) # 2
         
     def forward(self, x):
         x = self.L1_conv(x)

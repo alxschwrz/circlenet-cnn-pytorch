@@ -3,6 +3,8 @@ from model import CircleNet
 from dataloader import SphereDataset
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
+from torchvision import transforms
+import argparse
 
 def visualize_prediction(model, dataloader):
     fig, axs = plt.subplots(3, 3, figsize=(15, 15))
@@ -31,12 +33,15 @@ def visualize_prediction(model, dataloader):
     plt.savefig('predictions.png')
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--model_path', type=str, default='best_model.pth', help='Path to model')
+    args = parser.parse_args()
+    model_path = args.model_path
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = CircleNet()
     model.to(device)
-    model.load_state_dict(torch.load('best_model.pth'))
+    model.load_state_dict(torch.load(model_path))
 
-    from torchvision import transforms
     transform = transforms.Compose([
         transforms.ToTensor(),
     ])

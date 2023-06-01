@@ -3,17 +3,25 @@ import cv2
 import os
 import pandas as pd
 from numpy.random import default_rng
+import argparse
 
 if not os.path.exists('images'):
     os.makedirs('images')
 
 rng = default_rng()
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--num_images', type=int, default=100, help='Number of images')
+parser.add_argument('--image_size', type=int, default=96, help='Size of the images')
+parser.add_argument('--radius_low', type=int, default=10, help='Minimum radius of the spheres')
+parser.add_argument('--radius_high', type=int, default=20, help='Maximum radius of the spheres')
+args = parser.parse_args()
+
 # Define variables
-num_images = 200
-image_size = 96
-radius_low = 10
-radius_high = 20
+num_images = args.num_images
+image_size = args.image_size
+radius_low = args.radius_low
+radius_high = args.radius_high
 center_loc = image_size // 2
 center_scale = image_size // 4
 

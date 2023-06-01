@@ -21,15 +21,15 @@ pip3 install -r requirements.txt
 ## Image Generation
 The script "generate_synthetic_spheres.py" can be used to generate a synthetic dataset of black and white images, each containing a circle of random size and position. Along with each generated image, the true coordinates of the circle's center are stored as a label. 
 ```
-python3 generate_synthetic_spheres.py
+python3 generate_synthetic_spheres.py --num_images 1000
 ```
 
-## Model training
+## Model Training
 ```
-python3 train.py
+python3 train.py --n_epochs 20 --batch_size 8 --save_as_onnx True
 ```
 
 ## Visualization
 ```
-python3 visualize_results.py
+python3 visualize_results.py --model best_model.pth
 ```
